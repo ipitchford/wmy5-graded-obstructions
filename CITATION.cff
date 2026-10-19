@@ -3,10 +3,10 @@ message: "Please cite this research report and preserve its unrefereed status an
 title: "Five-variable weak Markus-Yamabe: graded compression and affine-Hessian obstructions"
 authors:
   - name: Anonymous
-version: 1.0.1
+version: 1.0.2
 date-released: 2026-10-19
 type: article
 license: CC0-1.0
-doi: 10.5281/zenodo.23477226
+doi: 10.5281/zenodo.23478563
 repository-code: "https://github.com/ipitchford/wmy5-graded-obstructions"
 url: "https://evidencepress.org/releases/wmy5-graded-obstructions/"

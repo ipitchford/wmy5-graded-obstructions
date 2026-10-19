@@ -4,7 +4,7 @@
 
 Start with [README.md](README.md), then read [CLAIMS.json](CLAIMS.json),
 [research_note.tex](research_note.tex), and [ASSURANCE.md](ASSURANCE.md). This is
-version 1.0.1, creator Anonymous, status unrefereed candidate. Publication
+version 1.0.2, creator Anonymous, status unrefereed candidate. Publication
 metadata is in [CITATION.cff](CITATION.cff). Do not infer that the global
 five-dimensional weak Markus--Yamabe problem has been solved.
 
