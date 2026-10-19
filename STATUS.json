@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-19",
+  "target": "A real polynomial X:R^5->R^5 with det(lambda I-DX)=(lambda+1)^5 identically and two distinct real zeros",
+  "target_status": "NOT RESOLVED IN THIS ATTEMPT",
+  "positive_construction": null,
+  "certified_results": [
+    "The stated parallel two-auxiliary compression family has no constant-spectrum member.",
+    "The stated unequal-weight two-auxiliary chain family has no constant-spectrum member.",
+    "For nonzero kappa, r and t, the nonconstant Hessian coefficient matrices of kappa*(a*(1+x*y)^3+r*x*b*(1+x*y)^2-t*x^3*c)^2 plus an arbitrary perturbation affine in (a,b,c) span all symmetric 5-by-5 matrices.",
+    "Consequently no invertible affine source and target changes of any gradient in that potential family can have constant Jacobian trace.",
+    "The displayed monomial inventories are exhaustive within their two stated bigraded architectures.",
+    "The final unequal-weight-chain contradiction follows from nine affine-linear coefficient equations and has exact residual 16367616.",
+    "Naive factor sharing preserves three zeros but has a positive Jacobian eigenvalue at (1,0,0,-1,0)."
+  ],
+  "supplementary_status": "Broader ansatz unit-ideal results were computed in Wolfram Language. They are not among the standalone certificate obligations.",
+  "not_claimed": [
+    "Nonexistence of a five-dimensional counterexample",
+    "A proof of the five-dimensional weak Markus-Yamabe conjecture",
+    "Absolute minimality of dimension six",
+    "Formal proof-assistant verification",
+    "Exhaustive priority or literature review",
+    "Nonlinear equivalence or obstruction outside the stated affine-Hessian family"
+  ],
+  "discovery_software": {
+    "sympy": "1.14.0"
+  },
+  "verifier_dependencies": "Python 3 standard library only"
+}

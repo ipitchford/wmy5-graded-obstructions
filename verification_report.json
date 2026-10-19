@@ -1,0 +1,62 @@
+{
+  "status": "partial; no five-dimensional counterexample constructed",
+  "arithmetic": "exact integers and fractions; standard-library implementation",
+  "checks": {
+    "six_dimensional_baseline": {
+      "characteristic_residual_terms": 0,
+      "checked_zeros": 3,
+      "seconds": 0.001326
+    },
+    "naive_compression_rejected": {
+      "preserved_zeros": 3,
+      "witness_point": [
+        1,
+        0,
+        0,
+        -1,
+        0
+      ],
+      "DH_characteristic": "L^3*(L^2-6)",
+      "DX_positive_eigenvalue": "-1+sqrt(6)",
+      "seconds": 0.001082
+    },
+    "parallel_auxiliaries": {
+      "reduction_bridge": {
+        "unreduced_parameters": 17,
+        "trace_identity": true,
+        "second_coefficient_relations": 2,
+        "substituted_model_match": true
+      },
+      "nonzero_coefficient_equations": 45,
+      "square_certificate": {
+        "inputs": 13,
+        "identity_steps": 21,
+        "targets": 2
+      },
+      "specialised_unit_certificate": {
+        "inputs": 18,
+        "identity_steps": 31,
+        "targets": 1
+      },
+      "conclusion": "no parameters over any characteristic-zero field",
+      "seconds": 0.045098
+    },
+    "unequal_weight_chain": {
+      "nonzero_coefficient_equations": 38,
+      "unit_certificate": {
+        "inputs": 27,
+        "identity_steps": 13,
+        "targets": 1
+      },
+      "conclusion": "no parameters over any characteristic-zero field",
+      "seconds": 0.012118
+    },
+    "hessian_trace_obstruction": {
+      "rank": 15,
+      "minor_determinant": "1533854592314376192",
+      "conclusion": "constant trace of B*Hess(Psi) forces symmetric part of B to vanish, hence trace zero",
+      "seconds": 0.000902
+    }
+  },
+  "seconds": 0.060588
+}

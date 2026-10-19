@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "command": "python discovery/regenerate.py; python3 -I verify.py",
+  "run_location": "separate full copy of release directory",
+  "certificates": [
+    {
+      "file": "cross_pure_certificate.json",
+      "release_sha256": "46cc3cba38c18124d76d8547a8c03a8c6daae4d104e6cf2ea6cb54eaa3e9c198",
+      "regenerated_sha256": "46cc3cba38c18124d76d8547a8c03a8c6daae4d104e6cf2ea6cb54eaa3e9c198",
+      "byte_identical": true
+    },
+    {
+      "file": "cross_final_certificate.json",
+      "release_sha256": "dbea03f5fb5435328c836f4769255e5e254998656253493a68f044e86beed43c",
+      "regenerated_sha256": "dbea03f5fb5435328c836f4769255e5e254998656253493a68f044e86beed43c",
+      "byte_identical": true
+    },
+    {
+      "file": "chain_final_certificate.json",
+      "release_sha256": "9b2f71cf4d323bcfd2c0bf0b02cdceebe0cd8c34e980a0fa64aec0748d7eb9c8",
+      "regenerated_sha256": "9b2f71cf4d323bcfd2c0bf0b02cdceebe0cd8c34e980a0fa64aec0748d7eb9c8",
+      "byte_identical": true
+    }
+  ],
+  "regeneration_stdout": "certificate 34 polys 21 steps 0 pairs left secs 0.2277827262878418\ncertificate 49 polys 31 steps 118 pairs left secs 0.049877166748046875\ncertificate 40 polys 13 steps 0 pairs left secs 0.005224466323852539\nCertificates regenerated. Run the standalone verifier; release hashes no longer apply after edits.\n",
+  "standalone_replay_stdout": "PASS: six_dimensional_baseline\nPASS: naive_compression_rejected\nPASS: parallel_auxiliaries\nPASS: unequal_weight_chain\nPASS: hessian_trace_obstruction\nALL EXACT CHECKS PASSED\n"
+}

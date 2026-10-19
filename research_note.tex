@@ -1,0 +1,573 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,array,microtype}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{ink}{HTML}{294B48}
+\usepackage[colorlinks=true,linkcolor=ink,urlcolor=ink,citecolor=ink,pdftitle={Five-variable weak Markus--Yamabe: graded compression and affine-Hessian obstructions},pdfauthor={Anonymous}]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Five-variable weak Markus--Yamabe}\fancyhead[R]{\small Research report}\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}\setlength{\parskip}{5pt}\setlength{\parindent}{0pt}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{proposition}[theorem]{Proposition}\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\Q}{\mathbb Q}\newcommand{\Id}{\operatorname{Id}}\newcommand{\tr}{\operatorname{tr}}\newcommand{\Hess}{\operatorname{Hess}}
+\title{\color{ink}Five-variable weak Markus--Yamabe:\\graded compression and affine-Hessian obstructions}
+\author{Anonymous}\date{19 October 2026}
+\begin{document}
+\thispagestyle{plain}
+\begin{center}
+\vspace*{3mm}
+{\LARGE\color{ink}Five-variable weak Markus--Yamabe:\\[2mm]
+graded compression and affine-Hessian obstructions\par}
+\vspace{6mm}
+Anonymous\\[2mm]
+19 October 2026\\[1mm]
+\href{https://doi.org/10.5281/zenodo.23477226}{doi:10.5281/zenodo.23477226}
+\end{center}
+\vspace{2mm}
+\begin{abstract}
+We investigate the construction of a polynomial vector field $X:\R^5\to\R^5$
+whose Jacobian has characteristic polynomial $(\lambda+1)^5$ everywhere and which
+has two distinct real zeros. We do not obtain such a field. We prove that two
+complete bigraded compression families built from a known six-dimensional
+example contain no field with the requested characteristic polynomial. Exact
+polynomial-identity certificates establish the exclusions. In the final chain
+proof, eight affine-linear coefficient equations force the variables and a
+ninth has exact nonzero residual. We also prove a uniform
+Hessian-span theorem: for a specified linear form $A$ in three auxiliary
+variables, every potential $\kappa A^2+D$, with $\kappa\ne0$ and arbitrary
+$D$ affine in those variables, resists every invertible affine source--target
+normalisation to constant Jacobian trace. A separate checker reconstructs the
+Jacobians and replays the finite certificates. A tempting factor-sharing
+compression retains three zeros but has an explicit positive Jacobian eigenvalue.
+None of these conclusions rules out a five-dimensional counterexample outside
+the stated architectures.
+\end{abstract}
+
+\section{Target, source boundary and status}
+The target is an explicit real polynomial map satisfying
+\begin{equation}\label{target}
+ \det(\lambda I_5-DX(z))=(\lambda+1)^5\quad(z\in\R^5),
+ \qquad X(z_1)=X(z_2)=0,\quad z_1\ne z_2.
+\end{equation}
+Writing $X=-\Id+H+\eta$, with constant $\eta$, makes the spectral requirement
+\begin{equation}\label{nil}
+ \det(LI_5-DH)=L^5.
+\end{equation}
+The constant $\eta$ affects fibers but not the Jacobian. Every exclusion below
+concerns \eqref{nil}; it does not exclude a Hurwitz field with nonconstant
+characteristic polynomial.
+
+The source audit, updated on 19 October 2026, includes the
+fourteen-dimensional chain construction of Casta\~neda, Honorato and
+Valenzuela-Henr\'iquez \cite{chain}, the six-dimensional construction posted by
+liqsweep \cite{six}, the five-variable Hessian potential of Meng and Yang
+\cite{hessian}, a degree-bounded retargeting obstruction \cite{ksl}, and Liu's
+Hesse-system formulation \cite{liu}. Earlier work already discusses failed chain
+shortening and coefficient-span methods. The contributions here are the exact
+displayed family exclusions, their transparent certificates, and the uniform
+affine-trace obstruction below. This is a targeted source boundary, not an
+exhaustive priority audit. The six-dimensional identities and its three listed
+zeros were reproduced independently. The new results have not undergone external
+specialist review or proof-assistant formalisation.
+
+\textbf{Result status.} The requested five-dimensional construction remains
+unresolved. The deliverables are exact obstruction theorems for specified
+architectures, a rejected candidate, and reproducible exact evidence. Broader
+uncertified searches are reported only as supplementary exploration.
+
+\section{The baseline and the failed direct substitution}
+For base variables $(x,y,z)$ put
+\begin{align}
+q&=y-6xz, & f&=x^2(3q+2xz),\\
+g_2&=24xq(q+xz), &g_3&=2q(2q+3xz),\\
+g_4&=12q^2 f, &g_6&=4q^3f.\nonumber
+\end{align}
+The remaining base polynomial is
+\[
+g_5=2xq^2(7q+6xz).
+\]
+The six-dimensional field in \cite{six} is
+\begin{equation}\label{sixfield}
+X_6=\begin{pmatrix}
+-x+f\\1-y+a-g_2\\-z+b-g_3\\-a-g_4\\-b+c-g_5\\-c-g_6
+\end{pmatrix}.
+\end{equation}
+Its characteristic polynomial is $(\lambda+1)^6$. The checker independently
+expands this identity and verifies the zeros
+\[
+(0,1,-4,0,0,0),\quad(-1,-11,2,12,-6,4),\quad
+(1,7,5/4,-3,-3/2,1/2).
+\]
+The proof mechanism in the source combines a constant determinant with a weighted
+similarity identity. Its auxiliary variables have weights $2,2,3$ under the
+base weights $(0,1,1)$.
+
+The factorisation $g_6=(q/3)g_4$ suggests sharing an auxiliary variable. After
+scaling the old $a$ by three, the tempting five-dimensional field is
+\begin{equation}\label{naive}
+X_{\rm try}=\begin{pmatrix}
+-x+f\\1-y+3a-g_2\\-z+b-g_3\\-a-4q^2f\\-b+qa-g_5
+\end{pmatrix}.
+\end{equation}
+It retains the three zeros
+\[
+(0,1,-4,0,0),\quad(-1,-11,2,4,-6),\quad
+(1,7,5/4,-1,-3/2).
+\]
+It is nevertheless not a Hurwitz field.
+
+\begin{proposition}\label{bad}
+At $P=(1,0,0,-1,0)$ the field \eqref{naive} has a positive Jacobian eigenvalue.
+More precisely,
+\[
+\det(\lambda I-DX_{\rm try}(P))
+=(\lambda+1)^3\big((\lambda+1)^2-6\big).
+\]
+\end{proposition}
+\begin{proof}
+Direct differentiation gives
+\[
+DX_{\rm try}(P)=\begin{pmatrix}
+-1&3&-16&0&0\\
+0&-1&0&3&0\\
+0&0&-1&0&1\\
+0&0&0&-1&0\\
+0&-1&6&0&-1
+\end{pmatrix}.
+\]
+Expansion gives the stated polynomial. The eigenvalue $-1+\sqrt6$ is positive.
+\end{proof}
+This failure identifies an important distinction: eliminating auxiliary
+variables in the equilibrium equations can preserve a fiber without preserving
+the Jacobian away from that fiber. A determinant argument that evaluates an
+auxiliary variable at its equilibrium value does not establish a global
+Jacobian identity.
+
+\section{Architectural coverage and relation to earlier obstructions}
+The next two families are not arbitrary degree-bounded searches.  They are the
+complete polynomial families with the displayed pairs of component gradings,
+after fixing the inherited base terms and two nonzero auxiliary feedthroughs.
+The feedthrough coefficients can be normalised to one by diagonal rescaling of
+the auxiliary coordinates; this is a linear conjugacy and hence preserves the
+Jacobian characteristic polynomial.  Cases in which either feedthrough is zero
+are not covered by that normalisation.
+
+\begin{proposition}\label{coverage}
+For the parallel grading, the five components admit respectively
+$2,5,4,8,8$ monomials.  Fixing the eight inherited base coefficients and two
+feedthrough coefficients leaves $27-8-2=17$ free coefficients.  For the chain
+grading, the corresponding counts are $2,4,4,7,11$; fixing the same data and
+imposing the two trace relations leaves $28-8-2-2=16$ free coefficients.
+Thus the formulae in Sections~\ref{parallelsection} and \ref{chainsection}
+exhaust their stated bigraded architectures.
+\end{proposition}
+\begin{proof}
+All variables except $x$ have positive first weight, while $x$ has second
+degree one.  For each component, enumerate the finitely many exponents of the
+positive-weight variables and solve the second-degree equation for the exponent
+of $x$.  Retaining the nonnegative solutions gives the displayed lists and
+counts.  The exact inventories are reproduced by
+\texttt{discovery/grading\_audit.py}.
+\end{proof}
+
+Casta\~neda, Honorato and Valenzuela-Henr\'iquez already describe failed
+shortening of their ordinary chain presentation \cite{chain}.  A later
+degree-filtration result excludes a different retargeting strategy only for
+target polynomials of degree at most eight \cite{ksl}.  Neither statement
+contains the two bigraded families below.  Conversely, Proposition~\ref{coverage}
+does not show that a successful five-dimensional construction must respect either
+grading, retain the three fixed base components, or use these auxiliary
+architectures.  For example, an $a^2$ term in the fourth parallel component has
+first weight $4$ rather than the required component weight $3$ and is therefore
+outside that family; so are changes to the fixed polynomial $f$ and branches
+with a zero feedthrough.  The exclusions remove two natural complete search
+spaces, not the global problem.
+
+\section{Parallel auxiliaries: an exact exclusion}\label{parallelsection}
+Consider the following family, with all coefficients arbitrary in a
+characteristic-zero field:
+\begin{equation}\label{parallel}
+H=\begin{pmatrix}
+f\\ a+\tau xb-g_2\\b-g_3\\-P+Aa+Bb\\-Q+Ca+Db
+\end{pmatrix},
+\end{equation}
+where
+\begin{align}
+P&=\sum_{k=0}^3p_k x^{k+2}y^{3-k}z^k, &
+Q&=\sum_{k=0}^3r_k x^{k+1}y^{3-k}z^k,\\
+A&=\alpha xy+\beta x^2z, &
+B&=\gamma x^2y+\delta x^3z,\\
+C&=\epsilon y+\zeta xz, &
+D&=\eta_1xy+\eta_2x^2z.
+\end{align}
+This is a 17-parameter family: eight cubic coefficients, eight auxiliary-coupling
+coefficients and $\tau$. The first three nonlinear base terms are fixed to the
+baseline. The family allows a cross-coupling $\tau xb$ in the second component.
+
+Every displayed term has componentwise weighted degree $w_i+1$ for
+$w=(0,1,1,2,2)$ and degree $\nu_i$ for
+$\nu=(1,-1,-2,-1,-2)$. These two gradings explain the finite monomial lists;
+they are explicit restrictions, not properties of all polynomial fields.
+
+\begin{theorem}\label{paralleltheorem}
+No choice of the 17 coefficients in \eqref{parallel} satisfies
+$\det(LI-DH)=L^5$. Consequently no constant translation of $-\Id+H$ supplies
+\eqref{target} in this family.
+\end{theorem}
+\begin{proof}
+The fixed base terms satisfy
+\[
+f_x-(g_2)_y-(g_3)_z=0.
+\]
+Vanishing trace therefore forces $D=-A$, so
+$\eta_1=-\alpha$ and $\eta_2=-\beta$. The coefficients linear in $a,b$ in the
+next characteristic coefficient force
+\begin{equation}\label{trace2relations}
+\zeta=-\alpha-\tau\epsilon,\qquad
+\gamma=\beta+\tau\alpha-3\tau.
+\end{equation}
+The checker reconstructs the unreduced family, checks its trace and the two
+relevant coefficients of the second elementary symmetric function, and verifies
+that these substitutions yield exactly the model used in the certificates.
+Thus it suffices to examine the resulting 13-parameter family.
+
+Differentiate \emph{before} setting $x=1$. Expand
+\[
+\det(LI-DH)|_{x=1}-L^5
+\]
+in $L,y,z,a,b$. There are 45 distinct nonzero coefficient equations in the
+parameters. Thirteen do not involve $p_0,\ldots,p_3,r_0,\ldots,r_3$.
+Denote these thirteen polynomials by $E_1,\ldots,E_{13}$.
+
+The rational identity certificate
+\texttt{cross\_pure\_certificate.json} proves
+\begin{equation}\label{squarecert}
+\beta^2,\ \epsilon^2\ \in (E_1,\ldots,E_{13}).
+\end{equation}
+It supplies 21 intermediate polynomial identities. The verifier reconstructs
+the $E_i$ from the displayed Jacobian; it does not accept a separate list of
+unverified equations as the input to the proof.
+
+At a simultaneous zero of the coefficient equations, \eqref{squarecert} implies
+$\beta=\epsilon=0$. One of the thirteen equations is
+\[
+-\alpha^2-\alpha\epsilon\tau-\beta\epsilon=0,
+\]
+so $\alpha=0$. A further coefficient, after these substitutions, is
+\[
+8\delta-128\tau=0.
+\]
+Every possible solution must consequently obey
+\begin{equation}\label{forced}
+\alpha=\beta=\epsilon=0,\qquad\delta=16\tau.
+\end{equation}
+The remaining auxiliary coupling is then $B=-\tau f$, and $A=C=D=0$.
+
+Substitute \eqref{forced} into the 45 coefficient polynomials and discard zeros
+and duplicates. The resulting 18 polynomials $F_1,\ldots,F_{18}$, in the nine
+variables $p_0,\ldots,p_3,r_0,\ldots,r_3,\tau$, satisfy
+\begin{equation}\label{unitcert}
+1\in(F_1,\ldots,F_{18}).
+\end{equation}
+The certificate \texttt{cross\_final\_certificate.json} proves \eqref{unitcert}
+through 31 further rational polynomial identities. A common zero would turn
+\eqref{unitcert} into $1=0$, a contradiction.
+
+Specialising $x=1$ loses no force in this exclusion: a global characteristic
+identity would necessarily hold on that slice. No claim that checking one slice
+establishes a global identity is used.
+\end{proof}
+
+\begin{remark}
+The theorem excludes arbitrary values of the displayed coefficients, not merely
+integer coefficients within a searched box. It does not exclude terms of other
+bidegrees, changes to the fixed base terms, different dependence on the auxiliary
+variables, or five-dimensional constructions unrelated to this baseline.
+\end{remark}
+
+\section{An unequal-weight chain: a second exclusion}\label{chainsection}
+A different attempt shares the first auxiliary between the second and third
+components, with auxiliary weights $2,3$. Let
+\begin{align}
+P&=\sum_{k=0}^3p_k x^{k+1}y^{3-k}z^k, &
+Q&=\sum_{k=0}^4v_k x^{k+2}y^{4-k}z^k,\\
+S&=\sum_{k=0}^2w_k x^{k+2}y^{2-k}z^k, &
+R&=rxy+sx^2z.
+\end{align}
+After imposing the trace condition, the family is
+\begin{equation}\label{chainfamily}
+H=\begin{pmatrix}
+f\\ \tau xa-g_2\\a-g_3\\b+P+Ra\\Q+Sa+jx^2a^2-Rb
+\end{pmatrix}.
+\end{equation}
+Its sixteen coefficients are unrestricted. The weights are
+$(0,1,1,2,3)$ and the second grading is $(1,-1,-2,-2,-2)$.
+The quartic terms and the quadratic term $jx^2a^2$ are included; simply omitting
+them would give a substantially narrower test.
+
+\begin{theorem}\label{chaintheorem}
+No member of \eqref{chainfamily} satisfies $\det(LI-DH)=L^5$.
+\end{theorem}
+\begin{proof}
+Differentiate first and specialise $x=1$. Among the 38 distinct nonzero
+characteristic coefficient polynomials are
+\begin{align*}
+E_0&=-2j-r\tau-s-3\tau,\\
+E_1&=r\tau+s,\\
+E_2&=-45r\tau+248r-8s\tau+42s,\\
+E_3&=32j+16r\tau+3s\tau,\\
+E_4&=-\tau(16r+3s).
+\end{align*}
+Their vanishing gives $32j=E_3+E_4=0$. Next
+$E_0+E_1=-2j-3\tau$ gives $\tau=0$, then $E_1$ gives $s=0$, and finally
+$E_2$ gives $r=0$.
+
+After substituting $j=\tau=s=r=0$, 27 distinct nonzero coefficient equations
+remain in the twelve coefficients of $P,Q,S$.  All are affine-linear.  Eight of
+them successively give
+\[
+w_0=w_1=w_2=0,\qquad
+p_1=132,\quad p_2=-744,\quad p_3=1392,\qquad
+v_3=-1920,\quad v_4=3264.
+\]
+A further necessary equation is
+\[
+-93312w_2+25344v_4+34560v_3=0.
+\]
+The forced values make its left-hand side
+\[
+25344(3264)+34560(-1920)=16\,367\,616\ne0,
+\]
+which is the required contradiction.  The exact equation indices and a checked
+rational linear combination are recorded by
+\texttt{check\_chain\_short\_identity.py}.  The fuller thirteen-step
+unit-ideal certificate is retained as redundant machine-checkable evidence.
+\end{proof}
+
+\section{A uniform affine-Hessian obstruction}
+For variables $(x,y,a,b,c)$ set $u=1+xy$ and, for nonzero $r,t$, define
+\[
+A_{r,t}=a u^3+rxb u^2-tx^3c.
+\]
+Let $d_0,d_1,d_2,d_3\in\R[x,y]$ be arbitrary and put
+\begin{equation}\label{generalphi}
+\Phi=\kappa A_{r,t}^2+d_0(x,y)+a d_1(x,y)+b d_2(x,y)+c d_3(x,y),
+\qquad \kappa rt\ne0.
+\end{equation}
+The coefficient-span object used below is the Hesse system in the terminology
+of Liu \cite{liu}; that general linear-algebra criterion is not claimed as new.
+The contribution is the following full-span calculation and its uniformity over
+the perturbations in \eqref{generalphi}.
+
+\begin{theorem}\label{hessiantheorem}
+If a constant real $5\times5$ matrix $M$ satisfies
+\[
+\tr\bigl(M\Hess\Phi(w)\bigr)=\text{constant}\quad(w\in\R^5),
+\]
+then $M+M^{\mathsf T}=0$, and the constant is zero. Equivalently, the
+nonconstant Hessian coefficient matrices of $\Phi$ span
+$\operatorname{Sym}_5(\R)$.
+\end{theorem}
+\begin{proof}
+Only the symmetric part $N=(M+M^{\mathsf T})/2$ contributes to the trace.
+Split $N$ into the symmetric block on $(x,y)$, the mixed block between
+$(x,y)$ and $(a,b,c)$, and the symmetric block on $(a,b,c)$. Compare
+coefficients in descending auxiliary degree.
+
+The coefficients of $b^2,a^2,x^2a^2$ first give
+\[
+2\kappa r^2 n_{xx}=0,\qquad
+12\kappa n_{xy}=0,\qquad
+30\kappa n_{yy}=0,
+\]
+so the base block vanishes.  Terms of auxiliary degree one then give
+\[
+4\kappa r n_{xa}=4\kappa r n_{xb}=24\kappa n_{ya}
+=-12\kappa t n_{yc}=0
+\]
+and the two equations
+\[
+-12t n_{xc}+20r n_{yb}=0,\qquad
+-16rt n_{xc}+16r^2 n_{yb}=0.
+\]
+Their coefficient determinant is $128r^2t\ne0$, so the mixed block vanishes.
+Finally the coefficients of $xy,x,x^3,x^2,x^4,x^6$ give, respectively,
+\[
+12\kappa n_{aa},\quad4\kappa r n_{ab},\quad-4\kappa t n_{ac},\quad
+2\kappa r^2 n_{bb},\quad-4\kappa rt n_{bc},\quad2\kappa t^2 n_{cc},
+\]
+and hence the last block vanishes.
+
+The perturbation in \eqref{generalphi} cannot alter this triangular argument.
+Its second base derivatives have auxiliary degree at most one, its mixed
+derivatives have auxiliary degree zero, and its second auxiliary derivatives
+vanish.  At each stage its possible contributions therefore lie in blocks
+already eliminated or below the active diagonal block. Thus $N=0$.
+Conversely, every skew-symmetric matrix pairs to zero with every symmetric
+Hessian. The constant is therefore zero.
+
+As an exact check, the selected $15\times15$ coefficient minor has determinant
+\begin{equation}\label{hessdet}
+-1\,304\,596\,316\,160\;\kappa^{15}r^{10}t^6,
+\end{equation}
+which is nonzero under the hypotheses.  At $(\kappa,r,t)=(1,3,1)$ its absolute
+value is
+\[
+77\,035\,107\,872\,931\,840.
+\]
+\end{proof}
+
+\begin{corollary}\label{affine}
+For every $S,T\in\operatorname{GL}_5(\R)$ and $c_0,d_0'\in\R^5$, the map
+\[
+X(z)=T\nabla\Phi(Sz+c_0)+d_0'
+\]
+has nonconstant Jacobian trace. In particular it cannot satisfy \eqref{target}.
+\end{corollary}
+\begin{proof}
+Cyclic invariance gives
+\[
+\tr DX(z)=\tr\bigl(ST\Hess\Phi(Sz+c_0)\bigr).
+\]
+Surjectivity of the source affine transformation and Theorem
+\ref{hessiantheorem} would force the invertible matrix $ST$ to be
+skew-symmetric. Every skew-symmetric matrix of odd order is singular, a
+contradiction.
+\end{proof}
+
+The audited version of the Meng--Yang construction \cite{hessian} uses
+$A=A_{3,1}$ and a potential whose remaining terms are affine in $(a,b,c)$;
+every nonzero coefficient of $A^2$ is covered by \eqref{generalphi}.  This
+formulation deliberately avoids relying on the numerical coefficient of the
+source's linear-in-$A$ term.  More generally,
+nonzero $r,t$ are coordinate rescalings of $r=3,t=1$, so this part records
+coordinate robustness rather than a separate novelty claim.  The arbitrary
+polynomials $d_i$ are the substantive uniform extension.  They need not preserve
+a constant Hessian determinant or a gradient collision.  The theorem is only an
+affine constant-trace obstruction; it does not exclude nonlinear transformations,
+other leading quadratic forms or general five-dimensional Hurwitz maps.
+
+\section{Certificate design and executed checks}
+A certificate is a finite sequence of identities
+\[
+P_k=\sum_{i<k} c_{ki}\,m_{ki}P_i,
+\]
+where the $c_{ki}$ are exact rational numbers and the $m_{ki}$ are monomials.
+The initial $P_i$ are coefficients reconstructed from the stated Jacobian.
+The final targets are $\beta^2$, $\epsilon^2$ or $1$, as appropriate.
+The checker only expands these identities. It need not implement, trust or
+verify a Gr\"obner-basis search algorithm.
+
+The discovery implementation uses SymPy's characteristic polynomial and a
+certificate-producing Buchberger calculation. The independently written
+standard-library checker uses sparse integer/rational polynomial arithmetic
+and recursive determinant expansion. The checked bridges are therefore:
+\begin{center}
+explicit map $\longrightarrow$ differentiated matrix $\longrightarrow$
+coefficient equations $\longrightarrow$ rational identities.
+\end{center}
+No sampled Jacobian evaluations are substituted for a polynomial identity.
+The lone $x=1$ restriction is used only as a necessary condition in an
+impossibility proof.
+
+\begin{center}\small
+\begin{tabular}{@{}p{.62\textwidth}p{.29\textwidth}@{}}\toprule
+Obligation & Executed result\\\midrule
+Six-dimensional characteristic identity & Zero residual polynomial\\
+Three baseline zeros & Exact substitution passed\\
+Naive compression & Positive-eigenvalue witness verified\\
+Parallel compression family & Both staged certificates passed\\
+Unequal-weight chain & Unit-ideal certificate passed\\
+Short chain contradiction & Eight forcing equations plus a ninth residual equation; $16\,367\,616$\\
+Original Hessian trace matrix & Submitted integer minor reproduced\\
+Uniform Hessian theorem & Symbolic determinant \eqref{hessdet} verified\\
+Grading completeness & Both monomial inventories reproduced\\
+Four deliberate certificate corruptions & All rejected\\\bottomrule
+\end{tabular}
+\end{center}
+
+The four mutation tests alter, respectively, a source equation, an intermediate
+identity, the asserted final target, and the final derivation. All are rejected.
+These tests detect several failure modes; they do not constitute a formal
+verification of the checker itself.
+
+To replay the proof-critical checks after extracting the bundle:
+\begin{verbatim}
+python3 -I verify.py --report /tmp/wmy5-verification.json
+python3 -I test_mutations.py
+python3 -I check_chain_short_identity.py
+python3 discovery/grading_audit.py
+python3 discovery/generalized_hessian_check.py
+\end{verbatim}
+The original verifier, mutation tests and short-chain check require only the
+Python standard library. The two discovery audits require SymPy. Expected
+terminal messages are
+\texttt{ALL EXACT CHECKS PASSED} and \texttt{ALL CORRUPTIONS REJECTED}.
+Optional SymPy discovery scripts can regenerate the rational certificates;
+they are not needed to verify them. These scripts were also executed in a
+separate copy of the bundle, and the standalone verifier accepted all three
+regenerated certificates.
+
+The report path above is outside the extracted package so that replay does not
+overwrite the manifest-bound historical report.
+
+\subsection*{Supplemental broader searches}
+Exact Wolfram Language calculations returned the unit ideal for several larger
+systems that allow changes to the lower base coefficients, as recorded in
+\texttt{supplementary/CAS\_RESULTS.md}. The source script reconstructs those
+systems. Small independent rational certificates for those broader systems are
+\emph{not} included, and the standalone checker does not claim to verify them.
+Some local Gr\"obner calculations exceeded an execution cap; those interruptions
+supply no mathematical conclusion. These two statuses are kept separate.
+
+\section{What remains open in this attempt}
+The global construction problem \eqref{target} is not settled. The precise
+conclusion is that a candidate cannot be obtained by selecting different
+coefficients within the two displayed compression families. The entire potential
+family \eqref{generalphi} also cannot be put into the requested constant-spectrum
+form by invertible affine changes.
+
+A construction outside these families could change the grading, break the
+second homogeneity, use different nonlinear dependence on auxiliary variables,
+or start from another Keller map. This report supplies no existence or
+nonexistence claim for those possibilities. In particular it does not establish
+that dimension six is minimal for polynomial constant-spectrum Hurwitz
+counterexamples, or that all five-dimensional Hurwitz maps are injective.
+
+\subsection*{Sanity checks}
+The rejected candidate shows that preserving all three exhibited zeros is
+insufficient: its Jacobian has an explicitly positive eigenvalue elsewhere.
+For the Hessian obstruction the necessary target trace is $-5$, whereas every
+constant trace obtainable by a constant left multiplier is zero. For the two
+compression exclusions the final contradictions are exact ideal membership and
+the explicit nonzero integer $16\,367\,616$, not numerical residuals or failures
+to find coefficients.
+
+\begin{thebibliography}{9}
+\bibitem{six} blueberryvertigo [liqsweep]. (2026, September 6).
+\emph{An integer polynomial Hurwitz counterexample in dimension six}
+[Manuscript and verification code]. GitHub.
+\url{https://github.com/blueberryvertigo/ArXiv-tryouts}.
+README blob inspected: \texttt{002e811eeba67d7cade25d2d8f3003b9c5c38002}.
+
+\bibitem{chain} Casta\~neda, \'A., Honorato, G., \& Valenzuela-Henr\'iquez, F.
+(2026, August 5). \emph{The weak Markus--Yamabe conjecture fails in dimension 14}
+[Preprint]. arXiv. \url{https://arxiv.org/abs/2608.05392}.
+
+\bibitem{hessian} Meng, G., \& Yang, L. (2026, July 27).
+\emph{A five-variable counterexample to the Hessian conjecture, and the
+low-dimensional status of the Jacobian and Hessian conjectures}
+[Preprint, version 2]. arXiv. \url{https://arxiv.org/abs/2607.22198v2}.
+
+\bibitem{ksl} Korea Superintelligence Labs. (2026, August 30).
+\emph{The degree filtration of the Alp\"oge subalgebra: Retargeting cannot
+lower the Markus--Yamabe dimension below fourteen} [Preprint, version 1].
+Ideosphere. \url{https://ideosphere.ai/papers/markus-yamabe-dim-v1.pdf}.
+
+\bibitem{liu} Liu, H. (2026). \emph{On the Hessian conjecture in Lorentzian
+signature: Constant pivots and Hesse systems} [Preprint]. arXiv.
+\url{https://arxiv.org/abs/2608.19112}.
+\end{thebibliography}
+\end{document}

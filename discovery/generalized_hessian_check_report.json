@@ -1,0 +1,284 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact symbolic SymPy",
+  "claim": "The selected Hessian-coefficient minor is nonzero whenever kappa, r and t are nonzero.",
+  "A": "a*(1+x*y)^3 + r*x*b*(1+x*y)^2 - t*x^3*c",
+  "selectors": [
+    "b**2",
+    "a**2",
+    "a**2*x**2",
+    "b",
+    "a",
+    "a*x",
+    "a*x**2",
+    "b*x**3",
+    "a*x**4",
+    "x*y",
+    "x",
+    "x**3",
+    "x**2",
+    "x**4",
+    "x**6"
+  ],
+  "pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      4
+    ]
+  ],
+  "rows": [
+    {
+      "selector": "b**2",
+      "entries": [
+        {
+          "pair": [
+            0,
+            0
+          ],
+          "coefficient": "2*kappa*r**2"
+        }
+      ]
+    },
+    {
+      "selector": "a**2",
+      "entries": [
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "coefficient": "12*kappa"
+        }
+      ]
+    },
+    {
+      "selector": "a**2*x**2",
+      "entries": [
+        {
+          "pair": [
+            1,
+            1
+          ],
+          "coefficient": "30*kappa"
+        }
+      ]
+    },
+    {
+      "selector": "b",
+      "entries": [
+        {
+          "pair": [
+            0,
+            2
+          ],
+          "coefficient": "4*kappa*r"
+        }
+      ]
+    },
+    {
+      "selector": "a",
+      "entries": [
+        {
+          "pair": [
+            0,
+            3
+          ],
+          "coefficient": "4*kappa*r"
+        }
+      ]
+    },
+    {
+      "selector": "a*x",
+      "entries": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "coefficient": "24*kappa"
+        }
+      ]
+    },
+    {
+      "selector": "a*x**2",
+      "entries": [
+        {
+          "pair": [
+            0,
+            4
+          ],
+          "coefficient": "-12*kappa*t"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "coefficient": "20*kappa*r"
+        }
+      ]
+    },
+    {
+      "selector": "b*x**3",
+      "entries": [
+        {
+          "pair": [
+            0,
+            4
+          ],
+          "coefficient": "-16*kappa*r*t"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "coefficient": "16*kappa*r**2"
+        }
+      ]
+    },
+    {
+      "selector": "a*x**4",
+      "entries": [
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "coefficient": "-12*kappa*t"
+        }
+      ]
+    },
+    {
+      "selector": "x*y",
+      "entries": [
+        {
+          "pair": [
+            2,
+            2
+          ],
+          "coefficient": "12*kappa"
+        }
+      ]
+    },
+    {
+      "selector": "x",
+      "entries": [
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "coefficient": "4*kappa*r"
+        }
+      ]
+    },
+    {
+      "selector": "x**3",
+      "entries": [
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "coefficient": "-4*kappa*t"
+        }
+      ]
+    },
+    {
+      "selector": "x**2",
+      "entries": [
+        {
+          "pair": [
+            3,
+            3
+          ],
+          "coefficient": "2*kappa*r**2"
+        }
+      ]
+    },
+    {
+      "selector": "x**4",
+      "entries": [
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "coefficient": "-4*kappa*r*t"
+        }
+      ]
+    },
+    {
+      "selector": "x**6",
+      "entries": [
+        {
+          "pair": [
+            4,
+            4
+          ],
+          "coefficient": "2*kappa*t**2"
+        }
+      ]
+    }
+  ],
+  "determinant": "-1304596316160*kappa**15*r**10*t**6",
+  "specialisation_absolute_determinant": "77035107872931840",
+  "boundary": "The manuscript's auxiliary-degree proof handles arbitrary affine-in-(a,b,c) perturbations; this script checks the load-bearing exact minor."
+}

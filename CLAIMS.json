@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0",
+  "version": "1.0.0",
+  "status": "unrefereed-candidate",
+  "creator": "Anonymous",
+  "claims": [
+    {
+      "id": "WMY5-BASELINE",
+      "class": "exact-reproduction",
+      "statement": "The stated six-dimensional baseline has characteristic polynomial (lambda+1)^6 and the three listed zeros.",
+      "locator": "research_note.tex: Section 2",
+      "evidence": ["verify.py", "verification_report.json"],
+      "limitation": "Reproduction of a cited construction, not a new result."
+    },
+    {
+      "id": "WMY5-NAIVE",
+      "class": "written-proposition",
+      "statement": "The displayed factor-sharing compression has a positive Jacobian eigenvalue at the stated point.",
+      "locator": "research_note.tex: Proposition 2.1",
+      "evidence": ["verify.py"],
+      "limitation": "Rejects one explicit candidate only."
+    },
+    {
+      "id": "WMY5-COVERAGE",
+      "class": "exact-finite-check",
+      "statement": "The displayed parallel and chain formulae exhaust their stated bigraded monomial architectures after the stated normalisations and relations.",
+      "locator": "research_note.tex: Proposition 3.1",
+      "evidence": ["discovery/grading_audit.py", "discovery/grading_audit_report.json"],
+      "limitation": "Does not cover other gradings, changed base terms, zero feedthrough cases or unrelated architectures."
+    },
+    {
+      "id": "WMY5-PARALLEL",
+      "class": "written-theorem-with-exact-certificate",
+      "statement": "No member of the displayed 17-parameter parallel-auxiliary family has det(LI-DH)=L^5.",
+      "locator": "research_note.tex: Theorem 4.1",
+      "evidence": ["verify.py", "certificates/cross_pure_certificate.json", "certificates/cross_final_certificate.json"],
+      "limitation": "Family-specific impossibility theorem."
+    },
+    {
+      "id": "WMY5-CHAIN",
+      "class": "written-theorem-with-exact-certificate",
+      "statement": "No member of the displayed 16-parameter unequal-weight chain family has det(LI-DH)=L^5.",
+      "locator": "research_note.tex: Theorem 5.1",
+      "evidence": ["verify.py", "check_chain_short_identity.py", "certificates/chain_final_certificate.json"],
+      "limitation": "Family-specific impossibility theorem; the short contradiction uses nine selected affine-linear coefficient equations."
+    },
+    {
+      "id": "WMY5-HESSIAN",
+      "class": "written-theorem-with-exact-symbolic-check",
+      "statement": "For nonzero kappa, r and t, the nonconstant Hessian coefficient matrices of the stated potential family span Sym_5(R), precluding constant trace after invertible affine source-target changes.",
+      "locator": "research_note.tex: Theorem 6.1 and Corollary 6.2",
+      "evidence": ["discovery/generalized_hessian_check.py", "discovery/generalized_hessian_check_report.json"],
+      "limitation": "Applies to the specified quadratic leading term plus perturbations affine in auxiliary variables and only to affine source-target changes."
+    },
+    {
+      "id": "WMY5-OPEN",
+      "class": "open-boundary",
+      "statement": "The global five-dimensional weak Markus-Yamabe construction/nonexistence problem remains unresolved by this release."
+    }
+  ]
+}

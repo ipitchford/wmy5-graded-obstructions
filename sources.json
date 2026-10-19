@@ -1,0 +1,52 @@
+[
+  {
+    "author": "blueberryvertigo / liqsweep",
+    "date": "2026-09-06",
+    "title": "An integer polynomial Hurwitz counterexample in dimension six",
+    "url": "https://github.com/blueberryvertigo/ArXiv-tryouts",
+    "readme_blob_sha": "002e811eeba67d7cade25d2d8f3003b9c5c38002",
+    "accessed": "2026-10-19",
+    "use": "Explicit baseline formulas; not used as an unverified assertion in the standalone checks."
+  },
+  {
+    "authors": [
+      "Álvaro Castañeda",
+      "Gerardo Honorato",
+      "Francisco Valenzuela-Henríquez"
+    ],
+    "date": "2026-08-05",
+    "title": "The weak Markus–Yamabe conjecture fails in dimension 14",
+    "url": "https://arxiv.org/abs/2608.05392",
+    "accessed": "2026-10-19",
+    "use": "Prior chain-realisation and graded-similarity construction."
+  },
+  {
+    "authors": [
+      "Guowu Meng",
+      "Liang Yang"
+    ],
+    "date": "2026-07-27",
+    "title": "A five-variable counterexample to the Hessian conjecture, and the low-dimensional status of the Jacobian and Hessian conjectures",
+    "url": "https://arxiv.org/abs/2607.22198v2",
+    "version": "2",
+    "accessed": "2026-10-19",
+    "use": "Audited five-variable Hessian construction; the new theorem is stated so it does not depend on the numerical coefficient of the source's linear-in-A term."
+  },
+  {
+    "author": "Korea Superintelligence Labs",
+    "date": "2026-08-30",
+    "title": "The degree filtration of the Alpoge subalgebra: Retargeting cannot lower the Markus-Yamabe dimension below fourteen",
+    "url": "https://ideosphere.ai/papers/markus-yamabe-dim-v1.pdf",
+    "version": "1",
+    "accessed": "2026-10-19",
+    "use": "Prior degree-bounded retargeting obstruction; distinguished from the two bigraded architecture exclusions here."
+  },
+  {
+    "author": "H. Liu",
+    "date": "2026",
+    "title": "On the Hessian conjecture in Lorentzian signature: Constant pivots and Hesse systems",
+    "url": "https://arxiv.org/abs/2608.19112",
+    "accessed": "2026-10-19",
+    "use": "Hesse-system terminology and general coefficient-span context; not claimed as the source of the specific uniform minor calculation."
+  }
+]

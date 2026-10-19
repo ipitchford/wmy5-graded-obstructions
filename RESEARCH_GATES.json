@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-10-19",
+  "recordScope": "Revision of the 14 October candidate after the 18 October supplied review; no discovery chronology is inferred from file timestamps.",
+  "contributionMap": [
+    {
+      "claim": "Exact exclusion of two complete stated bigraded compression families.",
+      "unit": "statement-and-proof",
+      "paperLocation": "Proposition 3.1 and Theorems 4.1 and 5.1",
+      "closestPriorWork": "Castañeda-Honorato-Valenzuela-Henríquez chain construction and shortening discussion; Korea Superintelligence Labs degree-bounded retargeting obstruction",
+      "verdict": "new-within-bounded-search",
+      "boundary": "The gradings, fixed base terms and auxiliary architectures are restrictions; no global five-dimensional nonexistence follows."
+    },
+    {
+      "claim": "Uniform full Hesse-system span for the displayed nondegenerate leading form plus arbitrary auxiliary-affine perturbations.",
+      "unit": "statement-and-proof",
+      "paperLocation": "Theorem 6.1 and Corollary 6.2",
+      "closestPriorWork": "Meng-Yang source potential; Liu Hesse-system framework",
+      "verdict": "new-within-bounded-formula-search",
+      "boundary": "Nonzero r,t variation is coordinate robustness; no constant-Hessian-determinant, collision or nonlinear-equivalence claim is made."
+    },
+    {
+      "claim": "Hesse-system definition and coefficient-span interpretation.",
+      "unit": "method",
+      "paperLocation": "Section 6",
+      "closestPriorWork": "Liu 2026, Definition 4.2",
+      "verdict": "known-cited"
+    }
+  ],
+  "limitationTriage": [
+    {
+      "limitation": "The global five-dimensional weak Markus-Yamabe target remains unresolved.",
+      "decision": "OPEN",
+      "whyNotClosedNow": "The exact exclusions cover two natural but restricted architectures and one affine-Hessian family; no tractable reduction from the unrestricted problem was established."
+    },
+    {
+      "limitation": "The original chain proof hid a short linear contradiction.",
+      "decision": "CLOSED",
+      "how": "Added a proof in which eight affine-linear coefficient equations force the variables and the ninth has nonzero residual, together with an independent standard-library replay."
+    },
+    {
+      "limitation": "The original fixed Hessian calculation understated its uniform scope.",
+      "decision": "CLOSED",
+      "how": "Proved and exactly checked the arbitrary auxiliary-affine perturbation theorem with nonzero kappa,r,t."
+    },
+    {
+      "limitation": "Historical priority is not exhaustively certified.",
+      "decision": "OPEN",
+      "whyNotClosedNow": "Bounded primary-source and formula searches cannot prove absence from all journals, theses or non-indexed repositories."
+    }
+  ]
+}

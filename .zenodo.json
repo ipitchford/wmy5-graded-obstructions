@@ -1,0 +1,28 @@
+{
+  "title": "Five-variable weak Markus-Yamabe: graded compression and affine-Hessian obstructions",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "creators": [
+    {"name": "Anonymous"}
+  ],
+  "version": "1.0.0",
+  "publication_date": "2026-10-19",
+  "access_right": "open",
+  "license": "cc-zero",
+  "doi": "10.5281/zenodo.23477226",
+  "description": "Unrefereed AI-assisted mathematical candidate. Two complete stated bigraded compression families built from a six-dimensional weak Markus-Yamabe example are excluded by exact polynomial certificates. A uniform Hessian-span theorem excludes constant Jacobian trace after invertible affine source-target changes for a specified family with arbitrary lower terms affine in three auxiliary variables. The global five-dimensional construction/nonexistence problem remains open. Exact replay is not proof-assistant formalisation or external peer review. Original prose/data are CC0-1.0; original code is MIT.",
+  "keywords": [
+    "weak Markus-Yamabe conjecture",
+    "polynomial vector fields",
+    "Jacobian spectrum",
+    "Hessian conjecture",
+    "exact certificates"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/ipitchford/wmy5-graded-obstructions",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

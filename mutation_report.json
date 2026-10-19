@@ -1,0 +1,25 @@
+{
+  "tests": [
+    {
+      "test": "input_not_from_jacobian",
+      "rejected": true,
+      "reason": "Certificate inputs do not match derived coefficient equations"
+    },
+    {
+      "test": "false_intermediate_identity",
+      "rejected": true,
+      "reason": "Invalid polynomial identity at proof step 0"
+    },
+    {
+      "test": "changed_unit_target",
+      "rejected": true,
+      "reason": "Target was changed"
+    },
+    {
+      "test": "false_final_derivation",
+      "rejected": true,
+      "reason": "Target not derived"
+    }
+  ],
+  "all_rejected": true
+}
