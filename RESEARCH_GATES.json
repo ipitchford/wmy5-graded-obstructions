@@ -1,52 +1,125 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.1",
   "date": "2026-10-19",
-  "recordScope": "Revision of the 14 October candidate after the 18 October supplied review; no discovery chronology is inferred from file timestamps.",
+  "recordScope": "Additive completeness correction to the final research-gate record; the theorem, manuscript and computational evidence are unchanged.",
   "contributionMap": [
     {
       "claim": "Exact exclusion of two complete stated bigraded compression families.",
-      "unit": "statement-and-proof",
+      "unit": "proof",
       "paperLocation": "Proposition 3.1 and Theorems 4.1 and 5.1",
+      "searches": [
+        {"date": "2026-10-19", "query": "weak Markus Yamabe five variables graded compression nilpotent Jacobian chain construction shortening"},
+        {"date": "2026-10-19", "query": "degree filtration retargeting Markus Yamabe dimension fourteen obstruction"}
+      ],
       "closestPriorWork": "Castañeda-Honorato-Valenzuela-Henríquez chain construction and shortening discussion; Korea Superintelligence Labs degree-bounded retargeting obstruction",
-      "verdict": "new-within-bounded-search",
+      "verdict": "new-in-bounded-search",
       "boundary": "The gradings, fixed base terms and auxiliary architectures are restrictions; no global five-dimensional nonexistence follows."
     },
     {
       "claim": "Uniform full Hesse-system span for the displayed nondegenerate leading form plus arbitrary auxiliary-affine perturbations.",
-      "unit": "statement-and-proof",
+      "unit": "statement",
       "paperLocation": "Theorem 6.1 and Corollary 6.2",
+      "searches": [
+        {"date": "2026-10-19", "query": "Hesse system Hessian difference span affine constant trace obstruction Meng Yang five variable"},
+        {"date": "2026-10-19", "query": "quadratic constant coefficient annihilator affine constant divergence Hessian conjecture"}
+      ],
       "closestPriorWork": "Meng-Yang source potential; Liu Hesse-system framework",
-      "verdict": "new-within-bounded-formula-search",
+      "verdict": "new-in-bounded-search",
       "boundary": "Nonzero r,t variation is coordinate robustness; no constant-Hessian-determinant, collision or nonlinear-equivalence claim is made."
     },
     {
       "claim": "Hesse-system definition and coefficient-span interpretation.",
       "unit": "method",
       "paperLocation": "Section 6",
+      "searches": [{"date": "2026-10-19", "query": "Liu constant pivots Hesse systems Definition 4.2 Hessian conjecture"}],
       "closestPriorWork": "Liu 2026, Definition 4.2",
       "verdict": "known-cited"
+    }
+  ],
+  "sourcesReadInFull": [
+    {
+      "citation": "Castañeda, Honorato and Valenzuela-Henríquez, The weak Markus-Yamabe conjecture fails in dimension 14, arXiv:2608.05392",
+      "date": "2026-10-19",
+      "usedFor": "Chain-realisation and graded-similarity comparison",
+      "readWhat": "Full preprint, with particular attention to Section 10 and shortening discussion",
+      "evidenceLocator": "SOURCES.md entry 2 and sources.json entry with URL https://arxiv.org/abs/2608.05392"
+    },
+    {
+      "citation": "Meng and Yang, A five-variable counterexample to the Hessian conjecture, arXiv:2607.22198v2",
+      "date": "2026-10-19",
+      "usedFor": "Source potential and separation from the affine-Hessian obstruction",
+      "readWhat": "Version 2 full preprint and displayed construction",
+      "evidenceLocator": "SOURCES.md entry 3 and sources.json version-2 record"
+    },
+    {
+      "citation": "Liu, On the Hessian conjecture in Lorentzian signature: Constant pivots and Hesse systems, arXiv:2608.19112",
+      "date": "2026-10-19",
+      "usedFor": "Hesse-system terminology and coefficient-span context",
+      "readWhat": "Full preprint, including Definition 4.2 and surrounding framework",
+      "evidenceLocator": "SOURCES.md entry 5 and sources.json URL https://arxiv.org/abs/2608.19112"
+    },
+    {
+      "citation": "Korea Superintelligence Labs, The degree filtration of the Alpoge subalgebra, version 1",
+      "date": "2026-10-19",
+      "usedFor": "Closest degree-bounded retargeting obstruction",
+      "readWhat": "Full version-1 paper",
+      "evidenceLocator": "SOURCES.md entry 4 and sources.json version-1 record"
     }
   ],
   "limitationTriage": [
     {
       "limitation": "The global five-dimensional weak Markus-Yamabe target remains unresolved.",
+      "closingQuestion": "Is there a tractable reduction from arbitrary five-variable nilpotent-Jacobian maps to either frozen graded architecture?",
+      "triedOrSearched": "Searched the inspected chain, filtration, pivot and Hesse-system routes and audited the first omitted architecture branches.",
+      "estimatedCost": "Open-ended new research programme; well beyond two hours and potentially requires new structural ideas.",
+      "cheap": false,
       "decision": "OPEN",
-      "whyNotClosedNow": "The exact exclusions cover two natural but restricted architectures and one affine-Hessian family; no tractable reduction from the unrestricted problem was established."
+      "reasonOpen": "No valid reduction from unrestricted WMY5 to the excluded families was found.",
+      "whyNotClosedNow": "The exact exclusions cover two natural but restricted architectures and one affine-Hessian family."
     },
     {
       "limitation": "The original chain proof hid a short linear contradiction.",
+      "closingQuestion": "Can the unit-ideal certificate be replaced by a readable exact contradiction?",
+      "triedOrSearched": "Eliminated the first eight affine-linear equations and evaluated the ninth residual independently.",
+      "estimatedCost": "Completed in the revision.",
+      "cheap": true,
       "decision": "CLOSED",
-      "how": "Added a proof in which eight affine-linear coefficient equations force the variables and the ninth has nonzero residual, together with an independent standard-library replay."
+      "how": "Eight equations force the variables and the ninth has residual 16,367,616, with an independent standard-library replay."
     },
     {
       "limitation": "The original fixed Hessian calculation understated its uniform scope.",
+      "closingQuestion": "Does full Hessian span persist for arbitrary auxiliary-affine perturbations and the nondegenerate coordinate orbit?",
+      "triedOrSearched": "Derived the auxiliary-degree triangular proof and checked the generalised determinant and coordinate congruence exactly.",
+      "estimatedCost": "Completed in the revision.",
+      "cheap": true,
       "decision": "CLOSED",
-      "how": "Proved and exactly checked the arbitrary auxiliary-affine perturbation theorem with nonzero kappa,r,t."
+      "how": "Theorem 6.1 and Corollary 6.2 establish the uniform result for nonzero parameters."
     },
     {
       "limitation": "Historical priority is not exhaustively certified.",
+      "closingQuestion": "Can absence of every equivalent formulation be established across journals, theses, repositories and languages?",
+      "triedOrSearched": "Ran formula, terminology, mechanism and coordinate-normalised searches against the closest primary sources.",
+      "estimatedCost": "Unbounded archival and multilingual priority investigation.",
+      "cheap": false,
       "decision": "OPEN",
-      "whyNotClosedNow": "Bounded primary-source and formula searches cannot prove absence from all journals, theses or non-indexed repositories."
+      "reasonOpen": "Bounded searches cannot prove universal historical absence.",
+      "whyNotClosedNow": "The release therefore makes no first-priority claim."
     }
-  ]
+  ],
+  "extensionScout": {
+    "by": "Codex revision synthesis with methodology, domain, perspective and devil's-advocate review roles",
+    "date": "2026-10-19",
+    "proposals": [
+      "Extract the short chain contradiction from the certificate.",
+      "Generalise the fixed Hessian witness to arbitrary auxiliary-affine perturbations.",
+      "Extend the Hessian result across the nondegenerate coordinate orbit.",
+      "Attempt a reduction from unrestricted WMY5 to the frozen graded families."
+    ],
+    "actions": [
+      "Completed and replayed the short chain proof.",
+      "Completed and exactly checked the uniform affine-Hessian theorem.",
+      "Completed the coordinate-orbit corollary.",
+      "Retained the unrestricted reduction as open after no valid tractable route was established."
+    ]
+  }
 }
